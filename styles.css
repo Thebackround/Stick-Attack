@@ -50,44 +50,22 @@ body {
     position: relative;
 }
 
-/* Enemy styles with red color */
-#enemy {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#enemy .head {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: red;
-}
-
-#enemy .body {
-    width: 5px;
-    height: 40px;
-    background-color: red;
-}
-
-#enemy .arm {
-    width: 30px;
-    height: 5px;
-    background-color: red;
-}
-
-/* Position the arms */
-.arm {
-    position: absolute;
-    top: 10px; /* Positioning relative to the body */
-}
-
 .arm.left {
     transform: rotate(45deg);
-    left: -20px; /* Move it left from the center */
+    left: -20px; /* Move it left */
 }
 
 .arm.right {
     transform: rotate(-45deg);
-    right: -20px; /* Move it right from the center */
+    right: -20px; /* Move it right */
 }
+
+/* Attack animation */
+@keyframes attack-left {
+    0% { transform: rotate(45deg); }
+    50% { transform: rotate(135deg); } /* Raise arm */
+    100% { transform: rotate(45deg); }
+}
+
+@keyframes attack-right {
+    0% { transform
